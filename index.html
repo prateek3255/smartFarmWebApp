@@ -1,82 +1,141 @@
+<!DOCTYPE html>
 <html ng-app="smartfarm">
-    <head>
-        <title>Tic Tac Toe</title>
-         <link rel="stylesheet" href="style.css">        
-         <link rel="stylesheet" href="bootstrap.css">  
-         <script src="angular.js"></script>
-       <script src="app.js"></script>
-        <script src="firebase.js"></script>
-        <script src="angularfire.js"></script>
-        <script src="app.js"></script>
-        <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyD14IZlTd7-V-F4gmHFkRXr8XLZSkeKXbs",
-        authDomain: "smartfarm-18270.firebaseapp.com",
-        databaseURL: "https://smartfarm-18270.firebaseio.com",
-        projectId: "smartfarm-18270",
-        storageBucket: "",
-        messagingSenderId: "205130913977"
-      };
-      firebase.initializeApp(config);
+<head>
+    <title>Dashboard - SmartFarm</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+    <script src="firebase.js"></script>
+    <script src="angularfire.js"></script>
+    <script src="app.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyD14IZlTd7-V-F4gmHFkRXr8XLZSkeKXbs",
+            authDomain: "smartfarm-18270.firebaseapp.com",
+            databaseURL: "https://smartfarm-18270.firebaseio.com",
+            projectId: "smartfarm-18270",
+            storageBucket: "",
+            messagingSenderId: "205130913977"
+        };
+        firebase.initializeApp(config);
     </script>
-    </head>
-    <body ng-controller="FirstCtrl as first">
-           
-            <!--for demo wrap-->
-            <h1>Smart Farm</h1>
-        <div class="row">
-           
-            <div class="col-xs-3">
-                <h1>Requirements(in tonnes)</h1><br>
-                <h3>Bajra : {{first.crops.Bajra}}</h3>
-                <h3>Barley : {{first.crops.Barley}}</h3>
-                <h3>Jawar : {{first.crops.Jawar}}</h3>
-                <h3>Maize : {{first.crops.Maize}}</h3>
-                <h3>Mustard : {{first.crops.Mustard}}</h3>
-                <h3>Pulses : {{first.crops.Pulses}}</h3>
-                <h3>Wheat : {{first.crops.Wheat}}</h3>
+</head>
+
+<body ng-controller="FirstCtrl as first">
+    <div class="app">
+        <img id="logo" src="logo.png" />
+        <span id="appName">SmartFarm</span>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-md-6">
+          <div class="thumbnail">
+            <img class="icon" src="user.png">
+            <div class="caption">
+              <p class="captionHead">Users</p>
+              <p>Details of users and their alloted crops</p>
+              <p><a href="#" class="btn btn-primary btn-block btn-large" role="button">Open</a></p>
             </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-6">
+            <div class="thumbnail">
+              <img class="icon" src="crop.png">
+              <div class="caption">
+                <p class="captionHead">Crops</p>
+                <p>Details of crops and their requirements</p>
+                <p><a href="#" class="btn btn-primary btn-block" role="button">Open</a></p>
+              </div>
+            </div>
+          </div>
+      </div>
+
+<!--Table-->
+<table class="table table-responsive table-hover">
+    <thead>
+        <tr>
+            <th>Crop</th>
+            <th>Requirement</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Bajra</td>
+            <td>{{first.crops.Bajra}}</td>
+        </tr>
+        <tr>
+            <td>Barley</td>
+            <td>{{first.crops.Barley}}</td>
+        </tr>
+        <tr>
+            <td>Jawar</td>
+            <td>{{first.crops.Jawar}}</td>
+        </tr>
+        <tr>
+            <td>Maize</td>
+            <td>{{first.crops.Maize}}</td>
+        </tr>
+        <tr>
+            <td>Mustard</td>
+            <td>{{first.crops.Mustard}}</td>
+        </tr>
+        <tr>
+            <td>Pulses</td>
+            <td>{{first.crops.Pulses}}</td>
+        </tr>
+        <tr>
+            <td>Wheat</td>
+            <td>{{first.crops.Wheat}}</td>
+        </tr>
+    </tbody>
+</table>
       
-            <div class=" col-xs-9">
-                  
-                            <!--for demo wrap-->
-                            <h1>Allotments</h1>
-                            <div class="tbl-header">
-                              <table cellpadding="0" cellspacing="0" border="0">
-                                <thead>
-                                  <tr>
-                                    <th>Name</th>
-                                    <th>Village</th>
-                                    <th>District</th>
-                                    <th>Contact</th>
-                                    <th>Area(hectare)</th>
-                                    <th>Alloted</th>
-                                  </tr>
-                                </thead>
-                              </table>
-                            </div>
-                            <div class="tbl-content">
-                              <table cellpadding="0" cellspacing="0" border="0">
-                                <tbody>
-                                  <tr ng-repeat="user in first.users">
-                                    <td>{{user.name}}</td>
-                                    <td>{{user.village}} </td>
-                                    <td>{{user.district}}</td>
-                                    <td>{{user.contact}}</td>
-                                    <td>{{user.area}}</td>
-                                    <th>{{user.alloted}}</th>
-                                  </tr>
-                             </tbody>
-                              </table>
-                            </div>
-                          
-                          
-                           </div>
-        </div>  
-        
-
-        
-
-    </body>
+    <div>
+        <div>
+            <h1>Requirements(in tonnes)</h1>
+            <br>
+            <h3>Bajra : {{first.crops.Bajra}}</h3>
+            <h3>Barley : {{first.crops.Barley}}</h3>
+            <h3>Jawar : {{first.crops.Jawar}}</h3>
+            <h3>Maize : {{first.crops.Maize}}</h3>
+            <h3>Mustard : {{first.crops.Mustard}}</h3>
+            <h3>Pulses : {{first.crops.Pulses}}</h3>
+            <h3>Wheat : {{first.crops.Wheat}}</h3>
+        </div>
+        <div>
+            <h1>Allotments</h1>
+            <div class="tbl-header">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Village</th>
+                            <th>District</th>
+                            <th>Contact</th>
+                            <th>Area(hectare)</th>
+                            <th>Alloted</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="tbl-content">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tbody>
+                        <tr ng-repeat="user in first.users">
+                            <td>{{user.name}}</td>
+                            <td>{{user.village}} </td>
+                            <td>{{user.district}}</td>
+                            <td>{{user.contact}}</td>
+                            <td>{{user.area}}</td>
+                            <th>{{user.alloted}}</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
