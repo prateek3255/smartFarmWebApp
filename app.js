@@ -9,10 +9,10 @@ angular.module("smartfarm", [ 'firebase'])
     // })
     .controller("FirstCtrl", FirstCtrl)
    
-    $(window).on("load resize ", function() {
-        var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
-        $('.tbl-header').css({'padding-right':scrollWidth});
-      }).resize();
+    // $(window).on("load resize ", function() {
+    //     var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+    //     $('.tbl-header').css({'padding-right':scrollWidth});
+    //   }).resize();
     
 
 function FirstCtrl($firebaseArray,$firebaseObject) {
@@ -22,7 +22,13 @@ var usersRef=firebase.database().ref("users");
 first.users=$firebaseArray(usersRef);
 var cropsRef=firebase.database().ref("crop");
 first.crops=$firebaseObject(cropsRef);
-
-
+first.usr = function() {
+    var elmnt = document.getElementById("user");
+elmnt.scrollIntoView();
+}
+first.crp = function() {
+    var elmnt = document.getElementById("crop");
+elmnt.scrollIntoView();
+}
 }
 

@@ -30,9 +30,10 @@
         <img id="logo" src="logo.png" />
         <span id="appName">SmartFarm</span>
     </div>
+
     <div class="row">
         <div class="col-sm-6 col-md-6">
-          <div class="thumbnail">
+          <div class="thumbnail" ng-click="first.usr()">
             <img class="icon" src="user.png">
             <div class="caption">
               <p class="captionHead">Users</p>
@@ -42,7 +43,7 @@
           </div>
         </div>
         <div class="col-sm-6 col-md-6">
-            <div class="thumbnail">
+            <div class="thumbnail" ng-click="first.crp()">
               <img class="icon" src="crop.png">
               <div class="caption">
                 <p class="captionHead">Crops</p>
@@ -53,8 +54,91 @@
           </div>
       </div>
 
+    <div class="tableHead" id="user">Users</div>  
+    <div class="userTable">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                            <!-- <caption class="text-center">Allotment</caption> -->
+                            <thead class="heading">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Village</th>
+                                    <th>District</th>
+                                    <th>Contact</th>
+                                    <th>Area(hectare)</th>
+                                    <th>Alloted</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="user in first.users">
+                                    <td>{{user.name}}</td>
+                                    <td>{{user.village}} </td>
+                                    <td>{{user.district}}</td>
+                                    <td>{{user.contact}}</td>
+                                    <td>{{user.area}}</td>
+                                    <th>{{user.alloted}}</th>
+                                </tr>
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tableHead" id="crop">Crop</div>
+    <div class="userTable2">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                            <!-- <caption class="text-center">jhbwk</caption> -->
+                            <thead class="heading">
+                                <tr>
+                                    <th>Crop</th>
+                                    <th>Requirement (in tonnes)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Bajra</td>
+                                    <td>{{first.crops.Bajra}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Barley</td>
+                                    <td>{{first.crops.Barley}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Jawar</td>
+                                    <td>{{first.crops.Jawar}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Maize</td>
+                                    <td>{{first.crops.Maize}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Mustard</td>
+                                    <td>{{first.crops.Mustard}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Pulses</td>
+                                    <td>{{first.crops.Pulses}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Wheat</td>
+                                    <td>{{first.crops.Wheat}}</td>
+                                </tr>
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 <!--Table-->
-<table class="table table-responsive table-hover">
+<!-- <table class="table table-responsive table-hover">
     <thead>
         <tr>
             <th>Crop</th>
@@ -91,9 +175,9 @@
             <td>{{first.crops.Wheat}}</td>
         </tr>
     </tbody>
-</table>
+</table> -->
       
-    <div>
+    <!-- <div>
         <div>
             <h1>Requirements(in tonnes)</h1>
             <br>
@@ -104,8 +188,8 @@
             <h3>Mustard : {{first.crops.Mustard}}</h3>
             <h3>Pulses : {{first.crops.Pulses}}</h3>
             <h3>Wheat : {{first.crops.Wheat}}</h3>
-        </div>
-        <div>
+        </div> -->
+        <!-- <div>
             <h1>Allotments</h1>
             <div class="tbl-header">
                 <table cellpadding="0" cellspacing="0" border="0">
@@ -135,7 +219,7 @@
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div> -->
     </div>
 </body>
 </html>
