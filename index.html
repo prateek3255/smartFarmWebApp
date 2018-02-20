@@ -34,7 +34,6 @@
 <body ng-controller="FirstCtrl as first">
     <div class="app">
         <img id="logo" src="img/logo.png" />
-        <span id="appName">SmartFarm</span>
     </div>
 
     <div class="row">
@@ -43,7 +42,7 @@
                 <img class="icon" src="img/user.png">
                 <div class="caption">
                     <p class="captionHead">Users</p>
-                    <p>Details of users and their alloted crops</p>
+                    <p>Details of application users and their alloted crops.</p>
                     <p>
                         <a href="#" class="btn btn-primary btn-block btn-large" role="button">Open</a>
                     </p>
@@ -55,7 +54,7 @@
                 <img class="icon" src="img/crop.png">
                 <div class="caption">
                     <p class="captionHead">Crops</p>
-                    <p>Details of crops and their requirements</p>
+                    <p>Details of crops and their initial and current requirements.</p>
                     <p>
                         <a href="#" class="btn btn-primary btn-block" role="button">Open</a>
                     </p>
@@ -67,7 +66,7 @@
                 <img class="icon" src="img/prediction.png">
                 <div class="caption">
                     <p class="captionHead">Prediction</p>
-                    <p>Prediction of the crop requirement using Machine Learning.</p>
+                    <p>Graphs of the crop requirement prediction using Machine Learning.</p>
                     <p>
                         <a href="#" class="btn btn-primary btn-block" role="button">Open</a>
                     </p>
@@ -82,7 +81,6 @@
             <div class="col-xs-12">
                 <div class="table-responsive">
                     <table class="table table-bordered table-hover">
-                        <!-- <caption class="text-center">Allotment</caption> -->
                         <thead class="heading">
                             <tr>
                                 <th>Name</th>
@@ -115,7 +113,6 @@
             <div class="col-xs-12">
                 <div class="table-responsive">
                     <table class="table table-bordered table-hover">
-                        <!-- <caption class="text-center">jhbwk</caption> -->
                         <thead class="heading">
                             <tr>
                                 <th>Crop</th>
@@ -165,14 +162,24 @@
             </div>
         </div>
     </div>
+
+    <div class="tableHead" id="prediction">Predictions</div>
     <div class="row">
-        <div class="col-sm-4 col-md-4" id="fig_el706415667263125687783256249"></div>
-        <div class="col-sm-4 col-md-4" id="fig_el124901398489009299687220451363"></div>
+        <div class="col-sm-2 col-md-2"></div>
         <div class="col-sm-4 col-md-4" id="fig_el124901398488362738809628417702"></div>
+        <div class="col-sm-4 col-md-4" id="fig_el124901398489009299687220451363"></div>
+        <div class="col-sm-2 col-md-2"></div>
     </div>
     <div class="row">
-        <div class="col-sm-6 col-md-6" id="fig_el28441593081450392375801200"></div>
-        <div class="col-sm-6 col-md-6" id="fig_el1101215908994948086944580377"></div>
+        <div class="col-sm-1 col-md-1"></div>
+        <div class="col-sm-5 col-md-5" id="fig_el28441593081450392375801200"></div>
+        <div class="col-sm-5 col-md-5" id="fig_el1101215908994948086944580377"></div>
+        <div class="col-sm-1 col-md-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 col-md-4"></div>
+        <div class="col-sm-8 col-md-8" id="fig_el706415667263125687783256249"></div>
+        <div class="col-sm-4 col-md-4"></div>
     </div>
 </body>
 
