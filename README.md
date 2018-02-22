@@ -1,5 +1,5 @@
 # SmartFarm
-<img src="https://drive.google.com/open?id=1pz1j2jA8nPay6dg6FUP1jkTQQmzpPcxO" align="center">
+<img src="https://drive.google.com/uc?id=1pz1j2jA8nPay6dg6FUP1jkTQQmzpPcxO" alt="loading"><br>
 Smart Farm is a crop management system that allots crops to farmers on the basis of the highest requirement crop predicted using machine learning from the crops that are suitable for their area according to the soil type, average rainfall etc. in their area, so that crops dont get wasted and, are produced accordingly. It consist of two apps a mobile app for the end-user i.e. the farmer, and a web-app for the admin.
 
 # Table of Contents
@@ -46,7 +46,7 @@ The crops section consist of the requirement for all the crops in tonnes and whe
 The data we got consisted of all the production of all the districts of all the states from 1997 - 2010 and we then added the production and area of the crops we wanted to plot of rajasthan using pandas and created a new data csv named final.csv.
 </p>
   
-To view the interactive plots click on prediction section <a href="">here</a>.<br/>
+To view the interactive plots click on prediction section <a href="https://smartfarm-18270.firebaseapp.com/">here</a>.<br/>
 <a href="https://github.com/prateek3255/SmartFarm_MachineLearning">Github repository</a>
  
 # <a name="built-with"></a>Built with
