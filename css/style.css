@@ -2,6 +2,7 @@ body,
 html {
   height: 100%;
   display: grid;
+  scroll-behavior: smooth;
 }
 
 .app {
